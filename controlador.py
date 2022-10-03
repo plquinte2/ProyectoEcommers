@@ -3,7 +3,7 @@ from datetime import datetime
 import sqlite3
 
 from flask import flash
-import enviaremail
+import templates.enviaremail as enviaremail
 
 DB_NAME='bdecommerce.s3db'
 
@@ -17,7 +17,7 @@ def adicionar_registros(nombre,apellido,usuario,p1):
     cod_ver=cod_ver.replace(" ","")
     cod_ver=cod_ver.replace(":","")
     cod_ver=cod_ver.replace(".","")
-    #flash(cod_ver)
+
     try:
         db=conexion()
         cursor=db.cursor()
